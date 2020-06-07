@@ -3,13 +3,13 @@
     <div class="weekend-title">周末去哪儿</div>
     <ul>
       <li class="item border-bottom" 
-        v-for="item of weekendList"
+        v-for="item of list"
         :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
         <div class="item-info">
-          <p class="item-title">{{item.title}}</p>
+          <p class="item-title">{{item.name}}</p>
           <p class="item-desc">{{item.desc}}</p>
         </div>
       </li>
@@ -21,6 +21,9 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
       weekendList: [
@@ -63,7 +66,6 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
   .weekend-title
-    margin-top: .2rem
     padding: .2rem 0
     line-height: .4rem
     background: #eee
@@ -71,7 +73,7 @@ export default {
   .item-img-wrapper 
     overflow: hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 37.09%
     .item-img
       width: 100%
   .item-info
