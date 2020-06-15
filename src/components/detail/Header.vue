@@ -64,6 +64,7 @@ export default {
       color: #ffffff
       font-size: .4rem
   .header-fixed
+    z-index: 2
     height: $headerHeight
     line-height: $headerHeight
     text-align: center
